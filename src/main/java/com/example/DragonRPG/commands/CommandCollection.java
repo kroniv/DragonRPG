@@ -13,6 +13,8 @@ public class CommandCollection {
   private Avatar avatar;
   @Autowired
   private Help help;
+  @Autowired
+  private Profile profile;
 
   private HashMap<String, Object> commandMap = new HashMap<>();
 
@@ -21,6 +23,7 @@ public class CommandCollection {
     commandMap.put(ping.getCommandName(), ping);
     commandMap.put(avatar.getCommandName(), avatar);
     commandMap.put(help.getCommandName(), help);
+    commandMap.put(profile.getCommandName(), profile);
   }
 
   public HashMap getMap() {

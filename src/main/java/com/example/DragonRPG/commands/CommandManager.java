@@ -17,13 +17,16 @@ public class CommandManager extends ListenerAdapter {
   private Avatar avatar;
   @Autowired
   private Help help;
+  @Autowired
+  private Profile profile;
 
   public void buildCommands(JDA jda) {
     jda.updateCommands().addCommands(
         Commands.slash(ping.getCommandName(), ping.getCommandDesc()),
         Commands.slash(help.getCommandName(), help.getCommandDesc()),
         Commands.slash(avatar.getCommandName(), avatar.getCommandDesc())
-            .addOption(OptionType.USER, "user", "username", true)
+            .addOption(OptionType.USER, "user", "username", true),
+        Commands.slash(profile.getCommandName(), profile.getCommandDesc())
     ).queue();
   }
 
