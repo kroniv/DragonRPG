@@ -30,12 +30,9 @@ public class CommandManager extends ListenerAdapter {
     ).queue();
   }
 
-  @Autowired
-  CommandCollection commandCollection;
-
   @Override
   public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-    var item = commandCollection.getMap().get(event.getName());
+    var item = Command.commandMap.get(event.getName());
     if (item == null) {
       event.reply("Command not found").queue();
     } else {

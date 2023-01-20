@@ -8,11 +8,12 @@ public class Ping extends Command {
 
   public Ping() {
     setCommandName("ping");
-    setCommandDesc("ping");
+    setCommandDesc("test command");
+    commandMap.put("ping", this);
   }
 
   @Override
   public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-    event.reply("pong-gock").queue();
+    event.reply("pong").queue();
   }
 }

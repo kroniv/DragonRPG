@@ -10,8 +10,9 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name="aspects")
+@Table(name = "aspects")
 public class Aspect {
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int aspectId;
@@ -23,7 +24,6 @@ public class Aspect {
   private int aspectPower;
   @OneToMany(mappedBy = "aspect")
   private List<Inventory> inventories;
-
 
 
 }

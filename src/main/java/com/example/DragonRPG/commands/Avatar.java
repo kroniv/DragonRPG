@@ -12,6 +12,7 @@ public class Avatar extends Command {
   public Avatar() {
     setCommandName("avatar");
     setCommandDesc("user avatar");
+    commandMap.put("avatar", this);
   }
 
   @Override

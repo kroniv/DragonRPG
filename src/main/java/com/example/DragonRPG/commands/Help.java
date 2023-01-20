@@ -10,6 +10,7 @@ public class Help extends Command {
   public Help() {
     setCommandName("help");
     setCommandDesc("help");
+    commandMap.put("help",this);
   }
 
   @Override
